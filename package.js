@@ -17,11 +17,11 @@ Package.onUse(function(api) {
   api.use('jquery')
   api.use('promise')
 
-  api.export('Promise', BOTH)
-
   api.add_files('wait.js', EVERYWHERE)
 
   api.add_files('find.js', CLIENT)
+
+  api.export('Promise', EVERYWHERE)
 })
 
 Package.onTest(function(api) {
