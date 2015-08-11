@@ -23,5 +23,5 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
   api.use('tinytest')
   api.use('poetic:promise-test-extension')
-  api.addFiles('promise-test-extension-tests.js')
+  // api.addFiles('promise-test-extension-tests.js')
 })
