@@ -5,13 +5,17 @@ meteor add poetic:meteor-promise-test-extension
 
 # Helpers
 - Promise.wait([Number timeout])
-- .wait([Number timeout])  
-  The defalut timeout is 3000ms, you can set it by ```Promise.TIMEOUT = 1000```
 - Promise.find(String jquerySelector)
-- .find([String jquerySelector])  
-  .find will smartly wait for at most 3000ms for the selected element to appear,
-  you can change the defalut value by ```Promise.FIND_TIMEOUT = 1000```
-- .finally([Function fn])
+- .wait([Number timeout]) # .wati will pass the previous result to the next then
+- .find(String jquerySelector)
+- .finally(Function fn)
+
+# Config
+  These are default configs, you can change them as you wish
+  ```
+  Promise.WAIT_UNTILL_INTERVAL = 500
+  Promise.WAIT_UNTILL_TIMEOUT  = 3000
+  ```
 
 # Warning
 This package will NOT be included in the production bundle since I set the
