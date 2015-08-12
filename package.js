@@ -1,6 +1,6 @@
 Package.describe({
   name: 'poetic:promise-test-extension',
-  version: '0.0.1',
+  version: '0.0.2',
   summary: 'A collection of promise helpers for testing. ',
   git: 'https://github.com/poetic/meteor-promise-test-extension',
   documentation: 'README.md',
@@ -16,6 +16,7 @@ Package.onUse(function(api) {
 
   api.use('jquery')
 
+  api.add_files('finally.js', CLIENT)
   api.add_files('wait.js', CLIENT)
   api.add_files('find.js', CLIENT)
 })
