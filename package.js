@@ -8,27 +8,24 @@ Package.describe({
 })
 
 Package.onUse(function(api) {
-  var CLIENT = 'client'
-  var SERVER = 'server'
-  var EVERYWHERE = ['client', 'server']
-
   api.versionsFrom('1.1.0.3')
 
   api.use('jquery')
   api.use('check')
 
-  api.add_files('constants.js', CLIENT)
-  api.add_files('finally.js', CLIENT)
-  api.add_files('utils/utils.js', CLIENT)
-  api.add_files('utils/wait-untill.js', CLIENT)
-  api.add_files('utils/length-should-be-one.js', CLIENT)
-  api.add_files('utils/add-method-to-promise.js', CLIENT)
-  api.add_files('wait.js', CLIENT)
-  api.add_files('find.js', CLIENT)
-  api.add_files('path-is.js', CLIENT)
-  api.add_files('click.js', CLIENT)
-  api.add_files('fill-in.js', CLIENT)
-
+  api.add_files([
+    'constants.js',
+    'finally.js',
+    'utils/utils.js',
+    'utils/wait-untill.js',
+    'utils/length-should-be-one.js',
+    'utils/add-method-to-promise.js',
+    'wait.js',
+    'find.js',
+    'path-is.js',
+    'click.js',
+    'fill-in.js'
+  ], 'client')
 })
 
 Package.onTest(function(api) {
