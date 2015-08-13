@@ -1,7 +1,11 @@
 Utils.addMethodToPromise('pathIs', function (path) {
   check(path, String)
 
-  return Utils.waitUntill(function () {
+  var pathIs = function () {
     return path === window.location.pathname
-  })
+  }
+
+  var timeoutReason = '[pathIs] path is not changed to ' + path
+
+  return Utils.waitUntill(pathIs, timeoutReason)
 })

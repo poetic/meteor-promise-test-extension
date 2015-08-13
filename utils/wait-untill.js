@@ -1,7 +1,9 @@
 /**
  * @return {Promise}
  */
-Utils.waitUntill = function (fn) {
+Utils.waitUntill = function (fn, timeoutReason) {
+  check(timeoutReason, String)
+
   return new Promise(function (resolve, reject) {
     var firstResult = fn()
     if (firstResult) {
@@ -20,11 +22,10 @@ Utils.waitUntill = function (fn) {
         resolve(result)
       } else if (timer > Promise.WAIT_UNTILL_TIMEOUT) {
         Meteor.clearInterval(intervalId)
-        var explanation = 'Promise takes more than ' +
-          Promise.WAIT_UNTILL_TIMEOUT +
-          ' milliseconds'
+        var fullReason = timeoutReason +
+          ' (in ' + Promise.WAIT_UNTILL_TIMEOUT + ' milliseconds)'
 
-        reject(new Meteor.Error('time-out', explanation))
+        reject(new Meteor.Error('time-out', fullReason))
       }
     }, Promise.WAIT_UNTILL_INTERVAL)
   })

@@ -1,7 +1,11 @@
 Utils.addMethodToPromise('find', function (selector) {
-  return Utils.waitUntill(function () {
+  var find = function () {
     check(selector, String)
     var element = $(selector)
     return Utils.lengthShouldBeOne(element, selector) && element
-  })
+  }
+
+  var timeoutReason = '[find] can not find ' + selector
+
+  return Utils.waitUntill(find, timeoutReason)
 })
