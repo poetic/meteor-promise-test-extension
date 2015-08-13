@@ -27,6 +27,7 @@ Package.onUse(function(api) {
   api.add_files('find.js', CLIENT)
   api.add_files('path-is.js', CLIENT)
   api.add_files('click.js', CLIENT)
+  api.add_files('fill-in.js', CLIENT)
 
 })
 
