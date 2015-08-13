@@ -1,6 +1,6 @@
 Package.describe({
   name: 'poetic:promise-test-extension',
-  version: '0.0.3',
+  version: '0.0.4',
   summary: 'A collection of promise helpers/extensions for testing.',
   git: 'https://github.com/poetic/meteor-promise-test-extension',
   documentation: 'README.md',
